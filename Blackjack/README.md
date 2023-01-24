@@ -1,4 +1,4 @@
-# Blackjack Simulation
+# Blackjack Boost
 
 ### Game Description
 
