@@ -1,5 +1,3 @@
-# [assignment name]
+# Distributed Genomics Annotation Service
 
-If the assignment requires a write-up, please include it here.
-
-You may also add optional explanatory notes, as needed, to help us when grading your work. If your submission is incomplete or not working, tell us what you did and where you got stuck, so we can give you partial credit.
+The Distributed Genomics Annotation Service (DGAS) is a fully functional software-as-a-service for genomics annotation that makes use of various cloud services running on Amazon Web Services, such as DynamoDB, S3, and SQS.
