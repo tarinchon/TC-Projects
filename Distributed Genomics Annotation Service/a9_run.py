@@ -1,12 +1,9 @@
 # run.py
 #
-# Copyright (C) 2011-2019 Vas Vasiliadis
-# University of Chicago
 #
 # Wrapper script for running AnnTools
 #
 ##
-__author__ = 'Vas Vasiliadis <vas@uchicago.edu>'
 
 import sys
 import time
