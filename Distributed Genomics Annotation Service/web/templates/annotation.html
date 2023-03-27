@@ -1,0 +1,41 @@
+<!--
+annotation.html - Display details about a user's annotation job
+-->
+{% extends "base.html" %}
+{% block title %}Annotation Details{% endblock %}
+{% block body %}
+  {% include "header.html" %}
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Annotation Details</h1>
+    </div>
+
+    <!-- DISPLAY ANNOTATION JOB DETAILS -->
+    
+    {% if data['Status'] == 'COMPLETED' %}
+    <p><b>Request ID:</b> {{ data['Request ID'] }}</p>
+    <p><b>Request Time:</b> {{ data['Request Time'] }}</p>
+    <p><b>VCF Input File:</b> <a href="{{ data['Input File URL'] }}">{{ data['VCF Input File'] }}</a></p>
+    <p><b>Status:</b> {{ data['Status'] }}</p>
+    <p><b>Complete Time:</b> {{ data['Complete Time'] }}</p>
+    <hr />
+      {% if data['Access'] == 'let download' %}
+        <p><b>Annotated Results File:</b> <a href="{{ data['Results File URL'] }}">download</a></p>
+      {% elif data['Access'] == 'restrict access' %}
+        <p><b>Annotated Results File:</b> <a href="{{ data['Make Me Premium Link'] }}">upgrade to Premium for download</a></p>
+      {% elif data['Access'] == 'THAWING' %}
+        <p><b>Annotated Results File:</b> file is being restored; please check back later</p>
+      {% endif %}
+    <p><b>Annotation Log File:</b> <a href="{{ data['Log File URL'] }}">view</a></p>
+    {% else %}
+    <p><b>Request ID:</b> {{ data['Request ID'] }}</p>
+    <p><b>Request Time:</b> {{ data['Request Time'] }}</p>
+    <p><b>VCF Input File:</b> <a href="{{ data['Input File URL'] }}">{{ data['VCF Input File'] }}</a></p>
+    <p><b>Status:</b> {{ data['Status'] }}</p>
+    {% endif %}
+    <hr />
+    <a href="{{ url_for('annotations_list') }}">&larr; back to annotations list</a>
+
+  </div> <!-- container -->
+{% endblock %}
